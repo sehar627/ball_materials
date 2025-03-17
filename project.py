@@ -14,7 +14,13 @@ def create_ball(space, ball_type, x_position):
         radius = 20
         elasticity = 0.3  # Less Bouncy Steel Ball
         color = (100, 100, 100)  # Gray
-  
+    elif ball_type == 3:
+        mass = 2
+        radius = 20
+        elasticity = 0.5  # Medium Bouncy Wooden Ball
+        color = (139, 69, 19)  # Brown
+    else:
+        return None
 
     body = pymunk.Body(mass, pymunk.moment_for_circle(mass, 0, radius))
     body.position = (x_position, 50)  # Each ball starts at different x-positions
